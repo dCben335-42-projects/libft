@@ -6,15 +6,13 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:42:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/04 14:44:54 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/04 17:46:24 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(char c)
+int	ft_isdigit(char c)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
-    return (0);
+	return (c >= '0' && c <= '9');
 }

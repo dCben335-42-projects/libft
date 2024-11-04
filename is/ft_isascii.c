@@ -6,15 +6,13 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:52:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/04 14:44:57 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/04 17:46:09 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return (1);
-    return (0);
+	return (c >= 0 && c <= 127);
 }
