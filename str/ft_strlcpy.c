@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:36:58 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 12:57:09 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/05 13:14:49 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/05 13:16:10 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned char		*d;
-	const unsigned char	*s = (const unsigned char *)src;
+	unsigned int count;
+	unsigned int src_size;
 
-	d = (unsigned char *)dest;
-	if (d <= s)
-		return (ft_memcpy(dest, src, n));
-	while (n--)
-		d[n] = s[n];
-	return (dest);
+	count = 0;
+	src_size = ft_getstrlen(src);
+	if (size < 1)
+		return (src_size);
+	while (src[count] && count < size - 1)
+	{
+		dest[count] = src[count];
+		count++;
+	}
+	dest[count] = '\0';
+	return (src_size);
 }

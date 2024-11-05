@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:36:58 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 12:57:09 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/05 14:53:49 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/05 15:06:18 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stdio.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char		*d;
-	const unsigned char	*s = (const unsigned char *)src;
+    int best;
+    int i;
 
-	d = (unsigned char *)dest;
-	if (d <= s)
-		return (ft_memcpy(dest, src, n));
-	while (n--)
-		d[n] = s[n];
-	return (dest);
+    best = -1;
+	while (*s && ++i)
+		if (*(s++) == c)
+			best = i;
+    if (best == -1)
+        return (0);
+	return ((char *)s[best]);
+}
+
+int	main(void)
+{
+	char	str[10] = "Hello";
+
+	printf("%s", ft_strrchr(str, 'c'));
 }

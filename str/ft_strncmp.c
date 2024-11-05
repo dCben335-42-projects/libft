@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:13:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/04 17:57:45 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/05 13:54:28 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int	ft_strncmp(char *s1, char *s2, int n)
 	while ((s1[++i] || s2[i]) && i < n)
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
-	return (0);
+	return (s1[i] - s2[i]);
 }

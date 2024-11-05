@@ -6,15 +6,21 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:14:58 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/04 17:23:00 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/05 12:36:07 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
+
+# include "stdlib.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	while (--n)
-		dest[n] = src[n];
+	unsigned char		*d;
+	const unsigned char	*s = (const unsigned char *)src;
+
+	d = (unsigned char *)dest;
+	while (n--)
+		*d++ = *s++;
 	return (dest);
 }
