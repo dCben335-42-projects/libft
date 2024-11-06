@@ -10,27 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-
-int	ft_isdigit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-static int	ft_iswhitespace(char c)
-{
-	return (c == ' ' || (c >= 9 && c <= 13));
-}
-
-static int	ft_isplussign(char c)
-{
-	return (c == '+');
-}
-
-static int	ft_isminussign(char c)
-{
-	return (c == '-');
-}
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {
@@ -39,12 +19,20 @@ int	ft_atoi(char *str)
 
 	result = 0;
 	sign = 1;
-	while (ft_iswhitespace(*str))
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
-	while (ft_isminussign(*str) || ft_isplussign(*str))
-		if (ft_isminussign(*(str++)))
+	while ((*str == '-') || (*str == '+'))
+		if (*(str++) == '-') 
 			sign *= -1;
 	while (ft_isdigit(*str))
 		result = result * 10 + (*str++ - 48);
 	return (sign * result);
+}
+
+#include <stdio.h>
+int main()
+{
+	char str[] = "----12345";
+	printf("%d\n", ft_atoi(str));
+	return 0;
 }
