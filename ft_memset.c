@@ -25,12 +25,12 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-#include "stdio.h"
+// #include "stdio.h"
 
-int main()
-{
-	char str[13] = "test de merde";
+// int main()
+// {
+// 	char str[13] = "test de merde";
 	
-	ft_memset(str, 'c', 3); 
-	printf("%s", str);
-}
+// 	ft_memset(str, 'c', 3); 
+// 	printf("%s", str);
+// }

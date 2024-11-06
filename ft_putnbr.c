@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	writenbrbase(unsigned int nb, char *base, int baselen, int fd)
+static void	writenbrbase(unsigned int nb, char *base, unsigned baselen, int fd)
 {
 	if (nb >= baselen)
 		 writenbrbase(nb / baselen, base, baselen, fd);
@@ -26,7 +26,7 @@ void	ft_putnbr(int nb, int fd)
 	writenbrbase((unsigned int)nb, "0123456789", 10, fd);
 }
 
-int	main(void)
-{
-	ft_putnbr(-2147483648, 1);
-}
+// int	main(void)
+// {
+// 	ft_putnbr(-2147483648, 1);
+// }

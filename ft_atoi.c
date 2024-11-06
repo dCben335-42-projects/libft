@@ -29,10 +29,10 @@ int	ft_atoi(char *str)
 	return (sign * result);
 }
 
-#include <stdio.h>
-int main()
-{
-	char str[] = "----12345";
-	printf("%d\n", ft_atoi(str));
-	return 0;
-}
+// #include <stdio.h>
+// int main()
+// {
+// 	char str[] = "----12345";
+// 	printf("%d\n", ft_atoi(str));
+// 	return 0;
+// }

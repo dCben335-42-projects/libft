@@ -1,28 +1,27 @@
 NAME = libft.a
-SRC_DIR = ./
-INC_DIR = ./
+
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
-HEADER = $(INC_DIR)/libft.h
-SRCS =	$(SRC_DIR)/ft_atoi.c \
-	$(SRC_DIR)/ft_isalnum.c \
-	$(SRC_DIR)/ft_isascii.c \
-	$(SRC_DIR)/ft_isprint.c \
-	$(SRC_DIR)/ft_memmove.c \
-	$(SRC_DIR)/ft_strchr.c \
-	$(SRC_DIR)/ft_strlcpy.c \
-	$(SRC_DIR)/ft_strncmp.c \
-	$(SRC_DIR)/ft_tolower.c \
-	$(SRC_DIR)/ft_bzero.c \
-	$(SRC_DIR)/ft_isalpha.c \
-	$(SRC_DIR)/ft_isdigit.c \
-	$(SRC_DIR)/ft_memcpy.c \
-	$(SRC_DIR)/ft_memset.c \
-	$(SRC_DIR)/ft_strlcat.c \
-	$(SRC_DIR)/ft_strlen.c \
-	$(SRC_DIR)/ft_strrchr.c \
-	$(SRC_DIR)/ft_toupper.c \
-	$(SRC_DIR)/ft_putnbr \
+FLAGS = -Wall -Wextra -Werror -I .
+HEADER = libft.h
+SRCS =	ft_atoi.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_memmove.c \
+	ft_strchr.c \
+	ft_strlcpy.c \
+	ft_strncmp.c \
+	ft_tolower.c \
+	ft_bzero.c \
+	ft_isalpha.c \
+	ft_isdigit.c \
+	ft_memcpy.c \
+	ft_memset.c \
+	ft_strlcat.c \
+	ft_strlen.c \
+	ft_strrchr.c \
+	ft_toupper.c \
+	ft_putnbr.c
 
 OBJS    = $(SRCS:.c=.o)
  
@@ -32,7 +31,7 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 %.o: %.c $(HEADER)
-	$(CC) $(FLAGS) -c  $< -o $@ -I $(INC_DIR)
+	$(CC) $(FLAGS) -c  $< -o $@
 
 clean:
 	rm -f $(OBJS)

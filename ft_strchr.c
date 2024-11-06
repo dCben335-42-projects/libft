@@ -23,9 +23,9 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-int	main(void)
-{
-	char	str[10] = "Hello";
+// int	main(void)
+// {
+// 	char	str[10] = "Hello";
 
-	printf("%s", ft_strchr(str, 'c'));
-}
+// 	printf("%s", ft_strchr(str, 'c'));
+// }

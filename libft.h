@@ -33,6 +33,8 @@ int				ft_tolower(int c);
 // strchr
 // strrchr
 int				ft_strncmp(char *s1, char *s2, int n);
+
+void	ft_putnbr(int nb, int fd);       
 // memchr
 // memcmp
 // strnstr
