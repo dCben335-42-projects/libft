@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:53:49 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 15:06:18 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/05 14:19:58 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/06 12:20:12 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdio.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int best;
-    int i;
-
-    best = -1;
-	while (*s && ++i)
-		if (*(s++) == c)
-			best = i;
-    if (best == -1)
-        return (0);
-	return ((char *)s[best]);
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)&*s);
+		s++;
+	}
+	return (0);
 }
 
 int	main(void)
 {
 	char	str[10] = "Hello";
 
-	printf("%s", ft_strrchr(str, 'c'));
+	printf("%s", ft_strchr(str, 'c'));
 }

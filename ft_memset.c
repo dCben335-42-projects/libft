@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:14:58 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 12:36:07 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/04 14:38:25 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/06 12:31:40 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
+#include "stdlib.h"
 
-# include "stdlib.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s = (const unsigned char *)src;
+	unsigned char	*tmp;
+	unsigned char 	chr;
 
-	d = (unsigned char *)dest;
+	tmp = (unsigned char *)s;
+	chr = (unsigned char)c;
 	while (n--)
-		*d++ = *s++;
-	return (dest);
+		*(tmp++) = chr;
+	return (s);
+}
+
+#include "stdio.h"
+
+int main()
+{
+	char str[13] = "test de merde";
+	
+	ft_memset(str, 'c', 3); 
+	printf("%s", str);
 }

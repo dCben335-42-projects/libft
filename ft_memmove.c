@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:19:58 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 14:51:46 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/04 15:36:58 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/06 15:41:57 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	while (*s)
-		if (*(s++) == c)
-			return ((char *)&*s);
-	return (0);
-}
+	unsigned char		*d;
+	const unsigned char	*s = (const unsigned char *)src;
 
-int	main(void)
-{
-	char	str[10] = "Hello";
-
-	printf("%s", ft_strchr(str, 'c'));
+	d = (unsigned char *)dest;
+	if (d <= s)
+		return (ft_memcpy(dest, src, n));
+	while (n--)
+		d[n] = s[n];
+	return (dest);
 }

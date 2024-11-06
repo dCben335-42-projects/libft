@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:42:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/04 17:46:24 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/05 14:53:49 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/06 15:00:36 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (c >= '0' && c <= '9');
+	int	best;
+	int	i;
+
+	best = -1;
+	while (*s && ++i)
+		if (*(s++) == c)
+			best = i;
+	if (best == -1)
+		return (0);
+	return ((char *)&s[best]);
 }

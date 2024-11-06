@@ -1,24 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:13:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 13:54:28 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/05 14:12:14 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/06 14:34:23 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strncmp(char *s1, char *s2, int n)
+int	ft_str_is_printable(char c)
 {
-	int	i;
-
-	i = -1;
-	while ((s1[++i] || s2[i]) && i < n)
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-	return (s1[i] - s2[i]);
+	return (!(c < 32 || c == 127));
 }

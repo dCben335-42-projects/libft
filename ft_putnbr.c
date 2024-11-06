@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 13:14:49 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 13:16:10 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/06 15:00:57 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/06 15:33:41 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+static void	writenbrbase(unsigned int nb, char *base, int baselen, int fd)
 {
-	unsigned int count;
-	unsigned int src_size;
+	if (nb >= baselen)
+		 writenbrbase(nb / baselen, base, baselen, fd);
+	write(fd, &base[nb % baselen], 1);
+}
 
-	count = 0;
-	src_size = ft_getstrlen(src);
-	if (size < 1)
-		return (src_size);
-	while (src[count] && count < size - 1)
-	{
-		dest[count] = src[count];
-		count++;
-	}
-	dest[count] = '\0';
-	return (src_size);
+void	ft_putnbr(int nb, int fd)
+{
+	if (nb < 0)
+		write(fd, "-", 1);
+	writenbrbase((unsigned int)nb, "0123456789", 10, fd);
+}
+
+int	main(void)
+{
+	ft_putnbr(-2147483648, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:45:17 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 15:54:59 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/06 13:59:51 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,11 @@ int	ft_atoi(char *str)
 	result = 0;
 	sign = 1;
 	while (ft_iswhitespace(*str))
-		*(str++);
+		str++;
 	while (ft_isminussign(*str) || ft_isplussign(*str))
 		if (ft_isminussign(*(str++)))
 			sign *= -1;
 	while (ft_isdigit(*str))
-		result = result * 10 + (*str - 48);
+		result = result * 10 + (*str++ - 48);
 	return (sign * result);
-}
-
-int main()
-{
-    
 }

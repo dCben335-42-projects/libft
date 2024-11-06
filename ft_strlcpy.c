@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:12:14 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/05 14:18:37 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/05 13:14:49 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/06 14:04:14 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char c)
+#include "libft.h"
+
+size_t	strlcpy(char *dest, const char *src, size_t size)
 {
-	return (c < 32 || c == 127);
+	size_t	count;
+
+	count = 0;
+	if (size < 1)
+		return ((size_t) ft_strlen((char *)src));
+	while (src[count] && count < size - 1)
+	{
+		dest[count] = src[count];
+		count++;
+	}
+	dest[count] = '\0';
+	return ((size_t) ft_strlen((char *)src));
 }
