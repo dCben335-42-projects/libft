@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:12:14 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/06 14:34:23 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:13:17 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
-	return (!(c < 32 || c == 127));
+	return (c >= 32 && c <= 126);
 }

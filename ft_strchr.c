@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:19:58 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/06 12:20:12 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/12 04:51:30 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)&*s);
+	while (*s && *s != (char) c)
 		s++;
-	}
-	return (0);
+	if (*s == (char) c)
+		return ((char *) s);
+	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	char	str[10] = "Hello";
-
-// 	printf("%s", ft_strchr(str, 'c'));
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:47:22 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/06 14:33:33 by bcabocel         ###   ########.fr       */
+/*   Updated: 2024/11/12 00:03:30 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	return ((void )ft_memset(s, '\0', n));
+	return ((void ) ft_memset(s, '\0', n));
 }
