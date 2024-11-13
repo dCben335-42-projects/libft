@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:45:17 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/14 00:09:17 by dcben335         ###   ########.fr       */
+/*   Created: 2024/11/06 15:00:57 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/13 20:52:00 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+static void	write_nbr_base(
+	unsigned int nb,
+	char *base,
+	unsigned int base_len,
+	int fd
+)
 {
-	long	result;
-	int		sign;
+	if (nb >= base_len)
+		write_nbr_base(nb / base_len, base, base_len, fd);
+	ft_putchar_fd(base[nb % base_len], fd);
+}
 
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if ((*str == '-') || (*str == '+'))
-		if (*(str++) == '-')
-			sign *= -1;
-	while (ft_isdigit(*str))
+void	ft_putnbr_fd(int nb, int fd)
+{
+	if (nb < 0)
 	{
-		if (result != ((result * 10) + (*str - '0')) / 10)
-		{
-			if (sign == 1)
-				return (-1);
-			return (0);
-		}
-		result = result * 10 + (*(str++) - '0');
+		ft_putchar_fd('-', fd);
+		nb = -nb;
 	}
-	return (sign * result);
+	write_nbr_base((unsigned int)nb, "0123456789", 10, fd);
 }

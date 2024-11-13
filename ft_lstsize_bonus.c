@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:45:17 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/14 00:09:17 by dcben335         ###   ########.fr       */
+/*   Created: 2024/11/13 22:43:22 by dcben335          #+#    #+#             */
+/*   Updated: 2024/11/13 23:10:48 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_lstsize(t_list *lst)
 {
-	long	result;
-	int		sign;
+	int	i;
 
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if ((*str == '-') || (*str == '+'))
-		if (*(str++) == '-')
-			sign *= -1;
-	while (ft_isdigit(*str))
+	i = 0;
+	while (lst)
 	{
-		if (result != ((result * 10) + (*str - '0')) / 10)
-		{
-			if (sign == 1)
-				return (-1);
-			return (0);
-		}
-		result = result * 10 + (*(str++) - '0');
+		lst = lst->next;
+		i++;
 	}
-	return (sign * result);
+	return (i);
 }

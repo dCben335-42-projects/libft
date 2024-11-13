@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:45:17 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/14 00:09:17 by dcben335         ###   ########.fr       */
+/*   Created: 2024/11/13 22:45:51 by dcben335          #+#    #+#             */
+/*   Updated: 2024/11/13 23:12:18 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	long	result;
-	int		sign;
-
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if ((*str == '-') || (*str == '+'))
-		if (*(str++) == '-')
-			sign *= -1;
-	while (ft_isdigit(*str))
-	{
-		if (result != ((result * 10) + (*str - '0')) / 10)
-		{
-			if (sign == 1)
-				return (-1);
-			return (0);
-		}
-		result = result * 10 + (*(str++) - '0');
-	}
-	return (sign * result);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
