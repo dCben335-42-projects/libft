@@ -6,7 +6,7 @@
 /*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:03:03 by dcben335          #+#    #+#             */
-/*   Updated: 2024/11/14 00:09:49 by dcben335         ###   ########.fr       */
+/*   Updated: 2024/11/14 01:44:44 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*last;
 
 	if (!new || !lst)
-		return ;\
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
