@@ -1,7 +1,9 @@
 NAME = libft.a
+
 CC = cc
 FLAGS = -Wall -Wextra -Werror -I .
 HEADER = libft.h
+BDIR = .build
 
 SRCS =	ft_atoi.c \
 	ft_isalnum.c \
@@ -48,22 +50,24 @@ SRCS_BONUS = ft_lstnew_bonus.c \
 	ft_lstiter_bonus.c \
 	ft_lstmap_bonus.c \
 
-OBJS    = $(SRCS:%.c=%.o)
-OBJS_BONUS = $(SRCS_BONUS:%.c=%.o)
+OBJS    = $(SRCS:%.c=$(BDIR)/%.o)
+OBJS_BONUS = $(SRCS_BONUS:%.c=$(BDIR)/%.o)
 
 $(NAME): $(OBJS) 
 	ar -rcs $(NAME) $(OBJS)
 
 all: $(NAME)
+	@mkdir -p $(@D)
 
-%.o: %.c $(HEADER) Makefile
+$(BDIR)/%.o: %.c $(HEADER) Makefile
+	@mkdir -p $(@D)
 	$(CC) $(FLAGS) -c  $< -o $@
 
 bonus:
 	$(MAKE) $(NAME) SRCS="$(SRCS) $(SRCS_BONUS)"
 
 clean:
-	rm -rf $(OBJS) $(OBJS_BONUS)
+	rm -rf $(BDIR)
 
 fclean: clean
 	rm -f $(NAME)
