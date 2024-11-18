@@ -6,7 +6,7 @@
 /*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/13 23:43:25 by dcben335         ###   ########.fr       */
+/*   Updated: 2024/11/19 00:56:35 by dcben335         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "stdlib.h"
 # include "unistd.h"
-
-# include <stdio.h>
 
 // Part 1
 
@@ -28,7 +26,7 @@ int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 
-int				ft_atoi(const char *str);
+int				ft_atoi_base(const char *str, char *base);
 
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
@@ -59,7 +57,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 
-char			*ft_itoa(int n);
+char			*ft_itoa_base(int n, char *base);
 
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
@@ -67,7 +65,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
+void			ft_putnbr_base_fd(int n, char *base, int fd);
 
 // Bonus part
 typedef struct s_list
