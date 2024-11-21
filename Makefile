@@ -10,6 +10,7 @@ SRCS_IS = ./is/ft_isalnum.c \
 		./is/ft_isascii.c \
 		./is/ft_isdigit.c \
 		./is/ft_isprint.c \
+		./is/ft_isinbase.c \
 
 SRCS_MEM = ./mem/ft_bzero.c \
 		./mem/ft_calloc.c \
@@ -23,6 +24,7 @@ SRCS_PUT = ./put/ft_putchar_fd.c \
 		./put/ft_putendl_fd.c \
 		./put/ft_putnbr_base_fd.c \
 		./put/ft_putstr_fd.c \
+		./put/ft_putull_base_fd.c \
 
 SRCS_STR = ./str/ft_split.c \
 		./str/ft_strchr.c \
@@ -53,7 +55,9 @@ SRCS_LST = ./lst/ft_lstadd_back.c \
 		./lst/ft_lstnew.c \
 		./lst/ft_lstsize.c \
 
-SRCS = $(SRCS_IS) $(SRCS_MEM) $(SRCS_PUT) $(SRCS_STR) $(SRCS_TO) $(SRCS_LST)
+SRCS_UTILS = ./utils/ft_intlen_base.c \
+
+SRCS = $(SRCS_IS) $(SRCS_MEM) $(SRCS_PUT) $(SRCS_STR) $(SRCS_TO) $(SRCS_LST) $(SRCS_UTILS)
 OBJS 	= $(SRCS:%.c=$(BDIR)/%.o)
 
 $(NAME): $(OBJS) 

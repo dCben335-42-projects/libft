@@ -1,0 +1,14 @@
+# vscode extensions
+.vscode/
+
+#output files
+*.o
+
+# .out files
+*.out
+
+# build files
+.build/
+
+# libraries .a
+*.a

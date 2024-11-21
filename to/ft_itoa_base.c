@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 04:12:30 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/19 00:50:25 by dcben335         ###   ########.fr       */
+/*   Updated: 2024/11/21 22:23:06 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_intlen_base(int n, int base_len)
-{
-	int	len;
-
-	len = 0;
-	if (n <= 0)
-		len++;
-	while (n)
-	{
-		len++;
-		n /= base_len;
-	}
-	return (len);
-}
 
 char	*ft_itoa_base(int n, char *base)
 {
@@ -42,14 +27,13 @@ char	*ft_itoa_base(int n, char *base)
 	str[len] = '\0';
 	nb = (unsigned int) n;
 	if (n < 0)
-	{
-		str[0] = '-';
 		nb = (unsigned int) -n;
-	}
 	while (--len >= 0)
 	{
 		str[len] = base[nb % base_len];
 		nb /= base_len;
 	}
+	if (n < 0)
+		str[0] = '-';
 	return (str);
 }

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putull_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 20:35:22 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/21 21:56:49 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/21 22:45:00 by bcabocel          #+#    #+#             */
+/*   Updated: 2024/11/21 22:53:36 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putendl_fd(char *s, int fd)
+int	ft_putull_base_fd(size_t nb, char *base, size_t base_len, int fd)
 {
 	int	len;
 
-	len = ft_putstr_fd(s, fd);
-	if (len == -1)
-		return (-1);
-	if (ft_putchar_fd('\n', fd) == -1)
+	len = 0;
+	if (nb >= base_len)
+		len += ft_putull_base_fd(nb / base_len, base, base_len, fd);
+	if (len == 5)
+		close(2);
+	if (ft_putchar_fd(base[nb % base_len], fd) == -1)
 		return (-1);
 	return (len + 1);
 }

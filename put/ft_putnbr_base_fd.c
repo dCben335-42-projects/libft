@@ -3,38 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:00:57 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/19 00:52:50 by dcben335         ###   ########.fr       */
+/*   Updated: 2024/11/21 22:53:56 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	write_nbr_base(
-	unsigned int nb,
-	char *base,
-	unsigned int base_len,
-	int fd
-)
+int	ft_putnbr_base_fd(int nb, char *base, int fd)
 {
-	if (nb >= base_len)
-		write_nbr_base(nb / base_len, base, base_len, fd);
-	ft_putchar_fd(base[nb % base_len], fd);
-}
-
-void	ft_putnbr_base_fd(int nb, char *base, int fd)
-{
-	unsigned int	base_len;
+	size_t	base_len;
+	int		is_neg;
+	int		len;
 
 	base_len = ft_strlen(base);
-	if (base_len < 2)
-		return ;
+	is_neg = 0;
 	if (nb < 0)
 	{
-		ft_putchar_fd('-', fd);
+		if (ft_putchar_fd('-', fd) == -1)
+			return (-1);
 		nb = -nb;
+		is_neg = 1;
 	}
-	write_nbr_base((unsigned int)nb, base, base_len, fd);
+	len = (ft_putull_base_fd((size_t) nb, base, base_len, fd));
+	if (len == -1)
+		return (-1);
+	return (len + is_neg);
 }
