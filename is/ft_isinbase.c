@@ -6,13 +6,13 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:37:46 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/21 22:45:51 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/01/13 18:33:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isinbase(char *base, char c)
+t_bool	ft_isinbase(char *base, char c)
 {
 	while (*base)
 		if (c == *(base++))

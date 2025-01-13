@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/21 22:53:14 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/01/13 18:32:51 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,19 @@
 # include "stdlib.h"
 # include "unistd.h"
 
+typedef enum e_bool
+{
+	FALSE = 0,
+	TRUE = 1,
+}	t_bool;
+
 // is
-int				ft_isalpha(int c);
-int				ft_isdigit(int c);
-int				ft_isalnum(int c);
-int				ft_isascii(int c);
-int				ft_isprint(int c);
-int				ft_isinbase(char *base, char c);
+t_bool			ft_isalpha(int c);
+t_bool			ft_isdigit(int c);
+t_bool			ft_isalnum(int c);
+t_bool			ft_isascii(int c);
+t_bool			ft_isprint(int c);
+t_bool			ft_isinbase(char *base, char c);
 
 // lst
 typedef struct s_list
