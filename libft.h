@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/13 22:38:14 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/01/14 18:55:28 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ char			*ft_itoa_base(int n, char *base);
 //utils
 int				ft_intlen_base(int n, size_t base_len);
 void			*ft_handle_free(void **ptr);
+void			*ft_handle_free_split(char **split);
+int				ft_split_len(char **split);
 
 #endif

@@ -56,7 +56,10 @@ SRCS_LST = ./lst/ft_lstadd_back.c \
 		./lst/ft_lstsize.c \
 
 SRCS_UTILS = ./utils/ft_intlen_base.c \
-		./utils/ft_handle_free.c
+		./utils/ft_handle_free.c \
+		./utils/ft_handle_free_split.c \
+		./utils/ft_split_len.c \
+
 
 SRCS = $(SRCS_IS) $(SRCS_MEM) $(SRCS_PUT) $(SRCS_STR) $(SRCS_TO) $(SRCS_LST) $(SRCS_UTILS)
 OBJS 	= $(SRCS:%.c=$(BDIR)/%.o)
