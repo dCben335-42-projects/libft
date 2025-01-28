@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 22:38:55 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/24 18:18:26 by bcabocel         ###   ########.fr       */
+/*   Created: 2025/01/28 17:59:48 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/01/28 18:15:25 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef TYPES_H
+# define TYPES_H
 
-t_list	*ft_lstnew(void *content)
+typedef enum e_bool
 {
-	t_list	*new;
+	TRUE = 1,
+	FALSE = 0,
+}	t_bool;
 
-	new = (t_list *) malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
-}
+#endif
