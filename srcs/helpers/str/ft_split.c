@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcben335 <dcben335@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 02:16:06 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/19 00:45:22 by dcben335         ###   ########.fr       */
+/*   Updated: 2025/02/10 19:34:10 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*ft_splitfree(char **split, int count)
+static void	*ft_splitfree(char **split, ssize_t count)
 {
 	while (count >= 0)
 		free(split[count--]);
@@ -20,9 +20,9 @@ static void	*ft_splitfree(char **split, int count)
 	return (NULL);
 }
 
-static int	ft_countwords(const char *s, char c)
+static size_t	ft_countwords(const char *s, char c)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (*s)
@@ -49,11 +49,11 @@ static size_t	ft_wordlen(const char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	int		i;
-	int		w_len;
+	char		**split;
+	size_t		i;
+	size_t		w_len;
 
-	split = (char **)malloc((ft_countwords((char *)s, c) + 1) * sizeof(char *));
+	split = malloc((ft_countwords((char *)s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
 	i = 0;
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 		w_len = ft_wordlen(s, c);
 		split[i] = ft_substr(s, 0, w_len);
 		if (!split[i])
-			return (ft_splitfree(split, i - 1));
+			return (ft_splitfree(split, (ssize_t)i - 1));
 		s += w_len;
 		i++;
 	}
