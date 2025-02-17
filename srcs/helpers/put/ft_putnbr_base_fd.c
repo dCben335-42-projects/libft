@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:00:57 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/21 22:53:56 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/02/17 03:56:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 int	ft_putnbr_base_fd(int nb, char *base, int fd)
 {
-	size_t	base_len;
-	int		is_neg;
-	int		len;
+	unsigned int	nbr;
+	size_t			base_len;
+	t_bool			is_neg;
+	int				len;
 
 	base_len = ft_strlen(base);
-	is_neg = 0;
+	is_neg = FALSE;
+	nbr = nb;
 	if (nb < 0)
 	{
 		if (ft_putchar_fd('-', fd) == -1)
 			return (-1);
-		nb = -nb;
-		is_neg = 1;
+		nbr = -nb;
+		is_neg = TRUE;
 	}
-	len = (ft_putull_base_fd((size_t) nb, base, base_len, fd));
+	len = (ft_putull_base_fd(nbr, base, base_len, fd));
 	if (len == -1)
 		return (-1);
 	return (len + is_neg);
