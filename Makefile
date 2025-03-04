@@ -5,7 +5,7 @@ C_FLAGS = -Wall -Wextra -Werror
 BUILD_DIR = .build
 
 INCLUDES_FOLDER = ./includes
-INCLUDES_FILES = libft.h ft_printf.h lst.h types.h
+INCLUDES_FILES = libft.h ft_printf.h lst.h types.h get_next_line.h
 INCLUDES = $(addprefix $(INCLUDES_FOLDER)/, $(INCLUDES_FILES))
 		
 SRCS_DIR = srcs
@@ -19,10 +19,13 @@ SRCS_HELPERS_FILES = is/ft_isalnum.c is/ft_isalpha.c is/ft_isascii.c is/ft_isdig
 
 SRCS_FTPRINTF_FILES = ft_printf.c \
 		callbacks/ft_print_char.c callbacks/ft_print_hex_upper.c callbacks/ft_print_hex.c callbacks/ft_print_int.c callbacks/ft_print_percent.c callbacks/ft_print_pointer.c callbacks/ft_print_string.c callbacks/ft_print_unsigned_int.c                                    
-		
+
+SRCS_GNL_FILES = get_next_line.c skip_file.c
+
 SRCS_HELPERS = $(addprefix $(SRCS_DIR)/helpers/, $(SRCS_HELPERS_FILES))
 SRCS_FTPRINTF = $(addprefix $(SRCS_DIR)/ft_printf/, $(SRCS_FTPRINTF_FILES))
-SRCS = $(SRCS_HELPERS) $(SRCS_FTPRINTF)
+SRCS_GNL = $(addprefix $(SRCS_DIR)/gnl/, $(SRCS_GNL_FILES))
+SRCS = $(SRCS_HELPERS) $(SRCS_FTPRINTF) $(SRCS_GNL)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
 
 $(NAME): $(OBJS) 
