@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:52:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/03/11 20:19:34 by bcabocel         ###   ########.fr       */
+/*   Created: 2025/03/07 14:43:52 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/03/07 14:54:08 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "types.h"
+#include "libft.h"
 
-t_bool	ft_isascii(int c)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	return (c >= 0 && c <= 127);
+	while (*s1 || *s2)
+	{
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		s1++;
+		s2++;
+	}
+	return (0);
 }

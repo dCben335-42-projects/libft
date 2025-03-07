@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:37:46 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/13 18:33:54 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:19:39 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "types.h"
 
 t_bool	ft_isinbase(char *base, char c)
 {

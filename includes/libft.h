@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/28 18:24:34 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:18:44 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@
 
 // is
 t_bool			ft_isalpha(int c);
+t_bool			ft_isloweralpha(int c);
+t_bool			ft_isupperalpha(int c);
 t_bool			ft_isdigit(int c);
 t_bool			ft_isalnum(int c);
 t_bool			ft_isascii(int c);
 t_bool			ft_isprint(int c);
+t_bool			ft_isspace(int c);
 t_bool			ft_isinbase(char *base, char c);
+t_bool			ft_isnumber(char *str, t_bool is_long);
 
 // put
 int				ft_putchar_fd(char c, int fd);
@@ -40,6 +44,7 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_strcmp(const char *s1, const char *s2);
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);

@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:12:14 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/13 18:34:00 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:19:56 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "types.h"
 
 t_bool	ft_isprint(int c)
 {
