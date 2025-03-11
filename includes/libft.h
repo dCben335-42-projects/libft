@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/03/11 20:18:44 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:34:36 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_atoi_base(const char *str, char *base);
+long			ft_atol_base(const char *str, char *base);
 char			*ft_itoa_base(int n, char *base);
 
 //utils
