@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:11:37 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/03/11 20:19:51 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/03/11 21:09:21 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,14 @@ static t_bool	ft_is_less(char *str, char *value, size_t value_len)
 
 static	t_bool	is_valid_int(char *str)
 {
-	if (!str || !*str)
+	if (!str)
 		return (FALSE);
 	if (ft_is_more(str, INT_MAX_STR, INT_MAX_LEN)
 		|| ft_is_less(str, INT_MIN_STR, INT_MIN_LEN))
+		return (FALSE);
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
 		return (FALSE);
 	while (*str)
 	{
@@ -58,10 +62,14 @@ static	t_bool	is_valid_int(char *str)
 
 static	t_bool	is_valid_long(char *str)
 {
-	if (!str || !*str)
+	if (!str)
 		return (FALSE);
 	if (ft_is_more(str, LONG_MAX_STR, LONG_MAX_LEN)
 		|| ft_is_less(str, LONG_MIN_STR, LONG_MIN_LEN))
+		return (FALSE);
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
 		return (FALSE);
 	while (*str)
 	{
