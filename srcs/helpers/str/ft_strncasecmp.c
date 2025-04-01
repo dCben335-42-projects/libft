@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncasecmp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:13:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:38:54 by bcabocel         ###   ########.fr       */
+/*   Created: 2025/04/01 19:58:57 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/04/01 20:21:06 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Compares two strings up to a specified number of characters.
+ * @brief Compares two strings lexicographically,
+ * 		ignoring case, up to n characters.
  *
- * @param s1 The first string to compare.
- * @param s2 The second string to compare.
+ * @param a The first string to compare.
+ * @param b The second string to compare.
  * @param n The maximum number of characters to compare.
- * @return A negative value if s1 is less than s2, a positive value if s1 is
- *         greater than s2, and 0 if they are equal.
+ * @return A negative value if a is less than b, a positive value if a is
+ *         greater than b, and 0 if they are equal.
  */
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncasecmp(const char *a, const char *b, size_t n)
 {
-	while ((*s1 || *s2) && n--)
+	int	ca;
+	int	cb;
+
+	while (n && (*a || *b))
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		s1++;
-		s2++;
+		ca = ft_tolower(*a);
+		cb = ft_tolower(*b);
+		if (ca != cb)
+			return (ca - cb);
+		a++;
+		b++;
+		n--;
 	}
 	return (0);
 }

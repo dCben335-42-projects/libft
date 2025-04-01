@@ -6,12 +6,18 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:12:14 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/03/11 20:19:56 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:44:19 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "types.h"
 
+/**
+ * @brief Checks if the given character is a printable ASCII character.
+ *
+ * @param c The character to check.
+ * @return 1 (TRUE) if c is a printable ASCII character, 0 (FALSE) otherwise.
+ */
 t_bool	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);

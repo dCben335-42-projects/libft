@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcasecmp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 14:43:52 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:37:52 by bcabocel         ###   ########.fr       */
+/*   Created: 2025/04/01 19:56:38 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/04/01 20:29:04 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Compares two strings lexicographically.
+ * @brief Compares two strings lexicographically, ignoring case.
  *
- * @param s1 The first string to compare.
- * @param s2 The second string to compare.
- * @return A negative value if s1 is less than s2, a positive value if s1 is
- *         greater than s2, and 0 if they are equal.
+ * @param a The first string to compare.
+ * @param b The second string to compare.
+ * @return A negative value if a is less than b, a positive value if a is
+ *         greater than b, and 0 if they are equal.
  */
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_strcasecmp(const char *a, const char *b)
 {
-	while (*s1 || *s2)
+	int	ca;
+	int	cb;
+
+	while (*a || *b)
 	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		s1++;
-		s2++;
+		ca = ft_tolower(*a);
+		cb = ft_tolower(*b);
+		if (ca != cb)
+			return (ca - cb);
+		a++;
+		b++;
 	}
 	return (0);
 }

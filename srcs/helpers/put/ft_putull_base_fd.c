@@ -6,12 +6,23 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:45:00 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/13 18:27:24 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:51:55 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Writes an unsigned long long integer
+ * 		in a specified base to a file descriptor.
+ *
+ * @param nb The unsigned long long integer to write.
+ * @param base The base to use for conversion 
+ * 		(e.g., "0123456789ABCDEF" for hexadecimal).
+ * @param base_len The length of the base.
+ * @param fd The file descriptor to write to.
+ * @return The number of bytes written, or -1 on error.
+ */
 int	ft_putull_base_fd(size_t nb, char *base, size_t base_len, int fd)
 {
 	int	len;

@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 17:59:48 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/03/11 20:38:56 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:50:34 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@
 # define BASE_10 "0123456789"
 # define BASE_16 "0123456789abcdef"
 # define BASE_16_UPPER "0123456789ABCDEF"
+
+typedef unsigned int	t_uint;
 
 typedef enum e_bool
 {

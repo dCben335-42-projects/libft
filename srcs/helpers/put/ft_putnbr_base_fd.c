@@ -6,12 +6,21 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:00:57 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/02/17 03:56:54 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:52:13 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Writes an integer in a specified base to a file descriptor.
+ *
+ * @param nb The integer to write.
+ * @param base The base to use for conversion
+ * 		(e.g., "0123456789ABCDEF" for hexadecimal).
+ * @param fd The file descriptor to write to.
+ * @return The number of bytes written, or -1 on error.
+ */
 int	ft_putnbr_base_fd(int nb, char *base, int fd)
 {
 	unsigned int	nbr;

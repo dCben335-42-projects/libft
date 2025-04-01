@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:11:37 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/03/11 21:09:21 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:49:09 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,14 @@ static	t_bool	is_valid_long(char *str)
 	return (TRUE);
 }
 
+/**
+ * @brief Checks if the given string represents a valid number.
+ *
+ * @param str The string to check.
+ * @param is_long If true, checks for long numbers;
+ * 		otherwise, checks for int numbers.
+ * @return 1 (TRUE) if str is a valid number, 0 (FALSE) otherwise.
+ */
 t_bool	ft_isnumber(char *str, t_bool is_long)
 {
 	if (is_long)

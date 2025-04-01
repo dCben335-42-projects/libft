@@ -6,12 +6,19 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 04:12:30 by bcabocel          #+#    #+#             */
-/*   Updated: 2024/11/21 22:23:06 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:35:03 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Converts an integer to a string in a given base.
+ *
+ * @param n The integer to convert.
+ * @param base The base to convert to (e.g., "0123456789ABCDEF" for hexadecimal).
+ * @return A pointer to the resulting string. NULL if memory allocation fails.
+ */
 char	*ft_itoa_base(int n, char *base)
 {
 	unsigned int	nb;

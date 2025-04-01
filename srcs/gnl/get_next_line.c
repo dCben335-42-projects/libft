@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 01:06:27 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/13 19:44:56 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:54:37 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,13 @@ static char	*handle_rest_from_buffer(char **rest, char *buffer)
 	return (*rest);
 }
 
+/**
+ * @brief Reads a line from a file descriptor.
+ *
+ * @param fd The file descriptor to read from.
+ * @return The line read from the file descriptor.
+ * 		NULL if an error occurs or EOF is reached.
+ */
 char	*get_next_line(int fd)
 {
 	static char	*rest[OPEN_MAX];

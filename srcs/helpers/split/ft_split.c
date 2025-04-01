@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 02:16:06 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/02/10 19:34:10 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:53:07 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,15 @@ static size_t	ft_wordlen(const char *s, char c)
 	return (len);
 }
 
+/**
+ * @brief Splits a string into an array of strings based on a delimiter.
+ *
+ * @param s The string to split.
+ * @param c The delimiter character.
+ * @return An array of strings with a NULL terminator at the end.
+ * 		Returns NULL if memory allocation fails
+ * 		or if the input string is NULL.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char		**split;

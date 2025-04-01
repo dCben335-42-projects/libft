@@ -6,13 +6,19 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:45:51 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/28 18:15:47 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/01 19:42:28 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 #include "stdlib.h"
 
+/**
+ * @brief Returns the last element of the list.
+ *
+ * @param lst The beginning of the list.
+ * @return The last element of the list.
+ */
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
