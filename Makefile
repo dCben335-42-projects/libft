@@ -18,7 +18,7 @@ SRCS_HELPERS_FILES = is/ft_isalnum.c is/ft_isalpha.c is/ft_isascii.c is/ft_isdig
 		strs/ft_strscat.c strs/ft_strsjoin.c strs/ft_strslen.c strs/ft_strsaddprefix.c strs/ft_strsaddsuffix.c \
 		to/ft_atoi_base.c to/ft_itoa_base.c to/ft_tolower.c to/ft_toupper.c \
 		lst/ft_lstadd_back.c lst/ft_lstadd_front.c lst/ft_lstclear.c lst/ft_lstdelone.c lst/ft_lstiter.c lst/ft_lstlast.c lst/ft_lstmap.c lst/ft_lstnew.c lst/ft_lstsize.c \
-		utils/ft_intlen_base.c utils/ft_free.c utils/ft_fnmatch.c \
+		utils/ft_intlen_base.c utils/ft_free.c utils/ft_fnmatch.c utils/ft_skip_char.c \
 		math/ft_abs.c math/ft_max.c math/ft_min.c \
 
 SRCS_FTPRINTF_FILES = ft_printf.c \

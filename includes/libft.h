@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/11 20:10:10 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/11 20:49:14 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,6 @@ char			*ft_itoa_base(int n, char *base);
 int				ft_intlen_base(int n, size_t base_len);
 void			*ft_free(void **ptr);
 t_bool			ft_fnmatch(const char *pattern, const char *str);
+const char		*ft_skip_char(const char *str, char c);
 
 #endif

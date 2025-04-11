@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 20:06:27 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 20:20:16 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/11 20:49:45 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "types.h"
+#include "libft.h"
 
 /**
  * @brief Matches a string against a pattern with wildcard support.
@@ -19,22 +19,33 @@
  * @param pattern The pattern to match against.
  * @param str The string to match.
  * @return TRUE if the string matches the pattern, FALSE otherwise.
+ * 
  */
 t_bool	ft_fnmatch(const char *pattern, const char *str)
 {
-	if (*pattern == '\0')
-		return (*str == '\0');
-	if (*pattern == '*')
+	const char	*star = NULL;
+	const char	*match = NULL;
+
+	while (*str)
 	{
-		while (*str)
+		if (*pattern == '*')
 		{
-			if (ft_fnmatch(pattern + 1, str))
-				return (TRUE);
+			star = pattern++;
+			match = str;
+		}
+		else if (*pattern == '?' || *pattern == *str)
+		{
+			pattern++;
 			str++;
 		}
-		return (ft_fnmatch(pattern + 1, str));
+		else if (star)
+		{
+			pattern = star + 1;
+			str = ++match;
+		}
+		else
+			return (FALSE);
 	}
-	if (*pattern == *str)
-		return (ft_fnmatch(pattern + 1, str + 1));
-	return (FALSE);
+	pattern = ft_skip_char(pattern, '*');
+	return (!*pattern);
 }
