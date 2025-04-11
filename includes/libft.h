@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 20:37:02 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/11 20:10:10 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,13 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 // strs
-size_t			ft_strslen(const char **strs, size_t count, t_bool need_space);
+char			**ft_strsaddprefix(const char *prefix, char **content);
+char			**ft_strsaddsuffix(const char *suffix, char **content);
+
+size_t			ft_strslen(const char **strs, size_t count, size_t sep_len);
 void			ft_strscat(char *dest, const char **strs, size_t count,
-					t_bool need_space);
-char			*ft_strsjoin(const char **strs, size_t count, t_bool need_space);
+					const char *sep);
+char			*ft_strsjoin(const char **strs, size_t count, const char *sep);
 
 // to
 int				ft_toupper(int c);
