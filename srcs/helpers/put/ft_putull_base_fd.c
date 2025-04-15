@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:45:00 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:51:55 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 23:53:18 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@
  * @param fd The file descriptor to write to.
  * @return The number of bytes written, or -1 on error.
  */
-int	ft_putull_base_fd(size_t nb, char *base, size_t base_len, int fd)
+int	ft_putull_base_fd(
+	const size_t nb,
+	const char *base,
+	const size_t base_len,
+	const int fd)
 {
 	int	len;
 

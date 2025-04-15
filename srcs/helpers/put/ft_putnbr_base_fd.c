@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:00:57 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:52:13 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 23:47:47 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @param fd The file descriptor to write to.
  * @return The number of bytes written, or -1 on error.
  */
-int	ft_putnbr_base_fd(int nb, char *base, int fd)
+int	ft_putnbr_base_fd(const int nb, const char *base, const int fd)
 {
 	unsigned int	nbr;
 	size_t			base_len;

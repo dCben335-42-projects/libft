@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:35:22 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:51:37 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 23:52:50 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @param fd The file descriptor to write to.
  * @return The number of bytes written, or -1 on error.
  */
-int	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(const char *s, const int fd)
 {
 	int	len;
 

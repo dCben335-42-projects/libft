@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/15 16:25:15 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 23:52:07 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ t_bool			ft_isinbase(char *base, char c);
 t_bool			ft_isnumber(char *str, t_bool is_long);
 
 // put
-int				ft_putchar_fd(char c, int fd);
-int				ft_putendl_fd(char *s, int fd);
-int				ft_putnbr_base_fd(int n, char *base, int fd);
-int				ft_putstr_fd(char *s, int fd);
-int				ft_putull_base_fd(size_t nb,
-					char *base, size_t base_len, int fd);
+int				ft_putchar_fd(const char c, const int fd);
+int				ft_putendl_fd(const char *s, const int fd);
+int				ft_putnbr_base_fd(const int n, const char *base, const int fd);
+int				ft_putstr_fd(const char *s, const int fd);
+int				ft_putull_base_fd(const size_t nb,
+					const char *base, const size_t base_len, const int fd);
 
 // sort
 void			ft_isort(char **array, size_t count,
