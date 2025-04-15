@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:03:23 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:38:44 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:23:12 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "types.h"
 
 /**
  * @brief Calculates the length of a string.

@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:17:37 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:38:50 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:23:18 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	str = malloc ((ft_strlen(s) + 1) * sizeof(char));
+	str = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;

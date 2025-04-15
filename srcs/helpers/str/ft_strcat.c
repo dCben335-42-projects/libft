@@ -6,11 +6,9 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 20:03:42 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 20:20:28 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:21:36 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 /**
  * @brief Concatenates two strings.

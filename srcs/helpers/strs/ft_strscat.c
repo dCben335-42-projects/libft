@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 20:14:25 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/11 20:13:00 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:24:40 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	ft_strscat(char *dest, const char **strs, size_t count, const char *sep)
 {
 	if (count == 0)
 		return ;
-	ft_strcat(dest, *strs);
+	dest = ft_stpcpy(dest, *strs);
 	if (sep && count > 1)
-		ft_strcat(dest, sep);
+		dest = ft_stpcpy(dest, sep);
 	ft_strscat(dest, strs + 1, count - 1, sep);
 }

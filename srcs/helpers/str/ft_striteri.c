@@ -6,11 +6,9 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:22:49 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:38:05 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:22:55 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 /**
  * @brief Applies a function to each character of a string, passing its index

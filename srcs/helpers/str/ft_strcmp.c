@@ -6,11 +6,9 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 14:43:52 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:37:52 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:21:20 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 /**
  * @brief Compares two strings lexicographically.

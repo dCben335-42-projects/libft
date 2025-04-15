@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:13:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:38:54 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:23:57 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "types.h"
 
 /**
  * @brief Compares two strings up to a specified number of characters.

@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/11 20:49:14 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:25:15 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int				ft_strncasecmp(const char *a, const char *b, size_t n);
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
+char			*ft_stpcpy(char *dest, const char *src);
 char			*ft_strcat(char *dest, const char *src);
 
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
