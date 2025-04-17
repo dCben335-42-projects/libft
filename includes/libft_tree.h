@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:54:42 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/15 20:43:07 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/17 20:15:41 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,8 @@ void		read_tree(t_tree *tree, const char *prefix, \
 				int f(void *, int), int fd);
 void		read_tree_node(t_tree_node *node, const char *prefix, \
 				int f(void *, int), int fd);
+
+char		*tree_valuesjoin(t_tree *tree, const char *sep, size_t count);
+char		*tree_keysjoin(t_tree *tree, const char *sep, size_t count);
 
 #endif

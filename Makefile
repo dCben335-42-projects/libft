@@ -5,7 +5,7 @@ C_FLAGS = -Wall -Wextra -Werror
 BUILD_DIR = .build
 
 INCLUDES_DIR = ./includes
-INCLUDES_FILES = libft.h ft_printf.h lst.h types.h get_next_line.h math_utils.h
+INCLUDES_FILES = libft.h ft_printf.h lst.h types.h get_next_line.h math_utils.h libft_tree.h
 INCLUDES = $(addprefix $(INCLUDES_DIR)/, $(INCLUDES_FILES))
 		
 SRCS_DIR = srcs
@@ -20,7 +20,7 @@ SRCS_HELPERS_FILES = is/ft_isalnum.c is/ft_isalpha.c is/ft_isascii.c is/ft_isdig
 		lst/ft_lstadd_back.c lst/ft_lstadd_front.c lst/ft_lstclear.c lst/ft_lstdelone.c lst/ft_lstiter.c lst/ft_lstlast.c lst/ft_lstmap.c lst/ft_lstnew.c lst/ft_lstsize.c \
 		utils/ft_intlen_base.c utils/ft_free.c utils/ft_fnmatch.c utils/ft_skip_char.c \
 		math/ft_abs.c math/ft_max.c math/ft_min.c \
-		tree/add.c tree/destroy.c tree/get.c tree/init.c tree/read.c
+		tree/add.c tree/destroy.c tree/get.c tree/init.c tree/read.c tree/key/join.c tree/value/join.c
 
 SRCS_FTPRINTF_FILES = ft_printf.c \
 		callbacks/ft_print_char.c callbacks/ft_print_hex_upper.c callbacks/ft_print_hex.c callbacks/ft_print_int.c callbacks/ft_print_percent.c callbacks/ft_print_pointer.c callbacks/ft_print_string.c callbacks/ft_print_unsigned_int.c                                    

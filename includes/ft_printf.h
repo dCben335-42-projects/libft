@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 01:34:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/28 20:53:57 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/04/17 20:18:04 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int		ft_printf(const char *format, ...);
 size_t	ft_strlen(const char *s);
 
 // put
-int		ft_putchar_fd(char c, int fd);
-int		ft_putstr_fd(char *s, int fd);
-int		ft_putendl_fd(char *s, int fd);
-int		ft_putnbr_base_fd(int n, char *base, int fd);
-int		ft_putull_base_fd(size_t nb,
-			char *base, size_t base_len, int fd);
+int				ft_putchar_fd(const char c, const int fd);
+int				ft_putendl_fd(const char *s, const int fd);
+int				ft_putnbr_base_fd(const int n, const char *base, const int fd);
+int				ft_putstr_fd(const char *s, const int fd);
+int				ft_putull_base_fd(const size_t nb,
+					const char *base, const size_t base_len, const int fd);
 
 // flag callbacks
 int		ft_print_char(va_list ap);
