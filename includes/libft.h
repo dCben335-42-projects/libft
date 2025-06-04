@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/15 23:52:07 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/05 19:56:05 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,8 @@ void			ft_isort(char **array, size_t count,
 					int (*cmp)(const char *, const char *), t_bool is_reverse);
 
 // split
-char			**ft_split(char const *s, char c);
-void			*ft_free_split(char **split);
-int				ft_splitlen(char **split);
+char			**ft_split(const char *s, const char *charset);
+int				ft_strscount(char **split);
 
 // str
 size_t			ft_strlen(const char *s);
@@ -88,6 +87,7 @@ size_t			ft_strslen(const char **strs, size_t count, size_t sep_len);
 void			ft_strscat(char *dest, const char **strs, size_t count,
 					const char *sep);
 char			*ft_strsjoin(const char **strs, size_t count, const char *sep);
+void			*ft_strsfree(char **strs);
 
 // to
 int				ft_toupper(int c);
@@ -100,6 +100,6 @@ char			*ft_itoa_base(int n, char *base);
 int				ft_intlen_base(int n, size_t base_len);
 void			*ft_free(void **ptr);
 t_bool			ft_fnmatch(const char *pattern, const char *str);
-const char		*ft_skip_char(const char *str, char c);
+const char		*ft_strskip(const char *str, char c);
 
 #endif

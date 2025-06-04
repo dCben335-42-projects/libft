@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_strs_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 18:42:59 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:34:07 by bcabocel         ###   ########.fr       */
+/*   Created: 2025/06/04 02:43:27 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/06/04 02:44:43 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Frees a split array of strings.
+ * 
+ * @brief Frees an array of strings.
  *
- * @param split The split array to free.
+ * @param strs The array of strings to free.
+ * 
  * @return NULL.
- */
-void	*ft_free_split(char **split)
+ *
+ * @note This function iterates through the array of strings, freeing each string
+ * and then freeing the array itself. It returns NULL to indicate that the
+ * memory has been freed.
+ * 
+*/
+void	*ft_strsfree(char **strs)
 {
-	int	i;
+	size_t	i;
 
+	if (!strs)
+		return (NULL);
 	i = 0;
-	while (split[i])
+	while (strs[i])
 	{
-		free(split[i]);
+		free(strs[i]);
 		i++;
 	}
-	free(split);
+	free(strs);
 	return (NULL);
 }

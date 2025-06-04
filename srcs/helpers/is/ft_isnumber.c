@@ -6,11 +6,12 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:11:37 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:49:09 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/04 02:26:59 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "math_utils.h"
 
 static t_bool	ft_is_more(char *str, char *value, size_t value_len)
 {

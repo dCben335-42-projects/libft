@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 20:06:27 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/11 20:49:45 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/04 02:26:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 /**
  * @brief Matches a string against a pattern with wildcard support.
- *        The pattern can contain '*' which matches any sequence of characters.
- *
+ * 
  * @param pattern The pattern to match against.
  * @param str The string to match.
+ * 
+ * @note The pattern characters need to be the negative ASCII values:
+ * - `-?` matches any single character
+ * - `-*` matches any sequence of characters
+ *
  * @return TRUE if the string matches the pattern, FALSE otherwise.
  * 
  */
@@ -28,12 +32,12 @@ t_bool	ft_fnmatch(const char *pattern, const char *str)
 
 	while (*str)
 	{
-		if (*pattern == '*')
+		if (*pattern == - '*')
 		{
 			star = pattern++;
 			match = str;
 		}
-		else if (*pattern == '?' || *pattern == *str)
+		else if (*pattern == - '?' || *pattern == *str)
 		{
 			pattern++;
 			str++;
@@ -46,6 +50,6 @@ t_bool	ft_fnmatch(const char *pattern, const char *str)
 		else
 			return (FALSE);
 	}
-	pattern = ft_skip_char(pattern, '*');
+	pattern = ft_strskip(pattern, - '*');
 	return (!*pattern);
 }

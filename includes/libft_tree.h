@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:54:42 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/17 20:15:41 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/04 02:39:11 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ typedef struct s_tree
 
 typedef t_tree	t_tree_node;
 
-t_tree_node	*init_tree_node(char *key, void *value, \
-	int (*cmp)(const char *, const char *), \
-	void *(*value_destroyer)(void *));
+t_tree_node	*init_tree_node(char *key, void *value,
+				int (*cmp)(const char *, const char *),
+				void *(*value_destroyer)(void *));
 
 t_tree		*add_existing_tree(t_tree *tree, char *key, void *value);
 t_tree		*add_tree_node(t_tree **tree, t_tree_node *new);
@@ -41,10 +41,7 @@ t_tree_node	*get_tree_parent(t_tree *tree, t_tree_node *node);
 void		*destroy_tree(t_tree *tree);
 void		*destroy_tree_node(t_tree **tree, t_tree_node *node);
 
-void		read_tree(t_tree *tree, const char *prefix, \
-				int f(void *, int), int fd);
-void		read_tree_node(t_tree_node *node, const char *prefix, \
-				int f(void *, int), int fd);
+void		read_tree(t_tree *tree, void f(t_tree_node *));
 
 char		*tree_valuesjoin(t_tree *tree, const char *sep, size_t count);
 char		*tree_keysjoin(t_tree *tree, const char *sep, size_t count);

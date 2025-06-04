@@ -1,56 +1,61 @@
 NAME = libft.a
 
+# Compiler and flags
 CC = cc
 C_FLAGS = -Wall -Wextra -Werror
-BUILD_DIR = .build
 
+# opt
+RM = rm -rf
+MKDIR = mkdir -p
+BUILD_DIR   = ./.build
+
+# configurations
+CONF_DIR   = ./config
+CONF_MK_INCLUDES = $(CONF_DIR)/includes.mk
+CONF_MK_SOURCES = $(CONF_DIR)/sources.mk
+
+# includes
 INCLUDES_DIR = ./includes
-INCLUDES_FILES = libft.h ft_printf.h lst.h types.h get_next_line.h math_utils.h libft_tree.h
+INCLUDES_FILES :=
+-include $(CONF_MK_INCLUDES)
+
 INCLUDES = $(addprefix $(INCLUDES_DIR)/, $(INCLUDES_FILES))
-		
-SRCS_DIR = srcs
-SRCS_HELPERS_FILES = is/ft_isalnum.c is/ft_isalpha.c is/ft_isascii.c is/ft_isdigit.c is/ft_isprint.c is/ft_isinbase.c is/ft_isnumber.c is/ft_isspace.c \
-		mem/ft_bzero.c mem/ft_calloc.c mem/ft_memchr.c mem/ft_memcmp.c mem/ft_memcpy.c mem/ft_memmove.c mem/ft_memset.c \
-		put/ft_putchar_fd.c put/ft_putendl_fd.c put/ft_putnbr_base_fd.c put/ft_putstr_fd.c put/ft_putull_base_fd.c \
-		sort/ft_isort.c \
-		split/ft_split.c split/ft_free_split.c split/ft_splitlen.c \
-		str/ft_strchr.c str/ft_strdup.c str/ft_strjoin.c str/ft_strcat.c str/ft_strlcat.c str/ft_strlcpy.c str/ft_stpcpy.c str/ft_strlen.c str/ft_strmapi.c str/ft_strcasecmp.c str/ft_strncasecmp.c str/ft_strncmp.c str/ft_strcmp.c str/ft_strnstr.c str/ft_strrchr.c str/ft_strtrim.c str/ft_substr.c \
-		strs/ft_strscat.c strs/ft_strsjoin.c strs/ft_strslen.c strs/ft_strsaddprefix.c strs/ft_strsaddsuffix.c \
-		to/ft_atoi_base.c to/ft_itoa_base.c to/ft_tolower.c to/ft_toupper.c \
-		lst/ft_lstadd_back.c lst/ft_lstadd_front.c lst/ft_lstclear.c lst/ft_lstdelone.c lst/ft_lstiter.c lst/ft_lstlast.c lst/ft_lstmap.c lst/ft_lstnew.c lst/ft_lstsize.c \
-		utils/ft_intlen_base.c utils/ft_free.c utils/ft_fnmatch.c utils/ft_skip_char.c \
-		math/ft_abs.c math/ft_max.c math/ft_min.c \
-		tree/add.c tree/destroy.c tree/get.c tree/init.c tree/read.c tree/key/join.c tree/value/join.c
+INCLUDES_FLAGS = -I $(INCLUDES_DIR)
 
-SRCS_FTPRINTF_FILES = ft_printf.c \
-		callbacks/ft_print_char.c callbacks/ft_print_hex_upper.c callbacks/ft_print_hex.c callbacks/ft_print_int.c callbacks/ft_print_percent.c callbacks/ft_print_pointer.c callbacks/ft_print_string.c callbacks/ft_print_unsigned_int.c                                    
+# sources
+SRC_DIR		= ./srcs
+SRC_FILES	:=
+-include $(CONF_MK_SOURCES)
 
-SRCS_GNL_FILES = get_next_line.c skip_file.c
+SRC         = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJ 		= $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
 
-SRCS_HELPERS = $(addprefix $(SRCS_DIR)/helpers/, $(SRCS_HELPERS_FILES))
-SRCS_FTPRINTF = $(addprefix $(SRCS_DIR)/ft_printf/, $(SRCS_FTPRINTF_FILES))
-SRCS_GNL = $(addprefix $(SRCS_DIR)/gnl/, $(SRCS_GNL_FILES))
-SRCS = $(SRCS_HELPERS) $(SRCS_FTPRINTF) $(SRCS_GNL)
-OBJS = $(patsubst $(SRCS_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
-
-$(NAME): $(OBJS) 
-	ar -rcs $(NAME) $(OBJS) 
+$(NAME): $(OBJ) 
+	ar -rcs $(NAME) $(OBJ) 
 
 all: $(NAME)
 
-$(BUILD_DIR)/%.o: $(SRCS_DIR)/%.c $(INCLUDES) Makefile
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDES) Makefile
 	@mkdir -p $(@D)
 	$(CC) $(C_FLAGS) -I $(INCLUDES_DIR) -c $< -o $@
 
 clean:
-	rm -rf $(BUILD_DIR)
+	$(RM) $(BUILD_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re:	fclean all
 
 norm:
-	norminette $(SRCS_DIR) $(INCLUDES_DIR)
+	norminette $(SRC) $(INCLUDES)
+
+gen: 
+	@$(MKDIR) $(CONF_DIR)
+	@echo "Generating includes.mk..."
+	@./config/generate_mk.sh $(INCLUDES_DIR) "*.h" $(CONF_MK_INCLUDES) INCLUDES_FILES
+	@echo "Generating sources.mk..."
+	@./config/generate_mk.sh $(SRC_DIR) "*.c" $(CONF_MK_SOURCES) SRC_FILES
+	$(MAKE)
 
 .PHONY: all clean fclean re norm
