@@ -6,12 +6,12 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:11:37 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/04 02:26:59 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:42:30 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "math_utils.h"
+#include "libft_math.h"
 
 static t_bool	ft_is_more(char *str, char *value, size_t value_len)
 {
@@ -82,12 +82,15 @@ static	t_bool	is_valid_long(char *str)
 }
 
 /**
+ * 
  * @brief Checks if the given string represents a valid number.
  *
  * @param str The string to check.
  * @param is_long If true, checks for long numbers;
  * 		otherwise, checks for int numbers.
+ * 
  * @return 1 (TRUE) if str is a valid number, 0 (FALSE) otherwise.
+ * 
  */
 t_bool	ft_isnumber(char *str, t_bool is_long)
 {

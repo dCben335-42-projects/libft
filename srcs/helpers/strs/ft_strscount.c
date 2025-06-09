@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 19:57:46 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/05 19:57:55 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "types.h"
+#include "libft_types.h"
 
 /**
  * 

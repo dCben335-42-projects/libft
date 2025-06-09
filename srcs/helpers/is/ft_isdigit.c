@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:42:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:43:53 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "types.h"
+#include "libft_types.h"
 
 /**
  * @brief Checks if the given character is a digit (0-9).

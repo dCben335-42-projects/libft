@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:03:23 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/13 22:40:51 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/06/10 00:13:40 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_types.h"
+#include "libft_lst.h"
 
 /**
- * @brief Calculates the length of a string.
+ * @brief Adds a new element at the beginning of the list.
  *
- * @param s The string to measure.
- * @return The length of the string, excluding the null terminator.
+ * @param lst The address of a pointer to the first link of a list.
+ * @param new The address of a pointer to the element to be added to the list.
  */
-size_t	ft_strlen(const char *s)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (!new || !lst)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

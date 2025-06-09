@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:18:10 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/04 02:37:12 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "types.h"
+#include "libft_types.h"
 
 /**
  * @brief Checks if the given character is a whitespace character

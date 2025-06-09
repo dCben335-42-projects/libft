@@ -6,22 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 02:16:06 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/05 19:56:11 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:33:12 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static t_bool	ft_include(const char *charset, char c)
-{
-	while (*charset)
-	{
-		if (*charset == c)
-			return (TRUE);
-		charset++;
-	}
-	return (FALSE);
-}
 
 static size_t	ft_countwords(const char *s, const char *charset)
 {
@@ -30,11 +19,11 @@ static size_t	ft_countwords(const char *s, const char *charset)
 	count = 0;
 	while (*s)
 	{
-		while (*s && ft_include(charset, *s))
+		while (*s && ft_isinclude(charset, *s))
 			s++;
 		if (*s)
 			count++;
-		while (*s && !ft_include(charset, *s))
+		while (*s && !ft_isinclude(charset, *s))
 			s++;
 	}
 	return (count);
@@ -45,7 +34,7 @@ static size_t	ft_wordlen(const char *s, const char *charset)
 	size_t	len;
 
 	len = 0;
-	while (s[len] && !ft_include(charset, s[len]))
+	while (s[len] && !ft_isinclude(charset, s[len]))
 		len++;
 	return (len);
 }
@@ -72,7 +61,7 @@ char	**ft_split(const char *s, const char *charset)
 	i = 0;
 	while (*s)
 	{
-		while (*s && ft_include(charset, *s))
+		while (*s && ft_isinclude(charset, *s))
 			s++;
 		if (!*s)
 			break ;

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math_utils.h                                       :+:      :+:    :+:   */
+/*   libft_math.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:54:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/04 02:25:09 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:07:26 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATH_UTILS_H
-# define MATH_UTILS_H
+#ifndef LIBFT_MATH_H
+# define LIBFT_MATH_H
 
 # include <stddef.h>
 

@@ -6,14 +6,14 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 12:54:42 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/04 02:39:11 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_TREE_H
 # define LIBFT_TREE_H
 
-# include "types.h"
+# include "libft_types.h"
 
 typedef struct s_tree
 {

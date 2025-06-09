@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_print_hex_upper.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:03:23 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/19 05:44:16 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/06/10 00:43:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_types.h"
+#include "libft_printf.h"
 
-/**
- * @brief Calculates the length of a string.
- *
- * @param s The string to measure.
- * @return The length of the string, excluding the null terminator.
- */
-size_t	ft_strlen(const char *s)
+int	ft_print_hex_upper(va_list ap)
 {
-	size_t	i;
+	unsigned int	n;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	n = va_arg(ap, unsigned int);
+	return (ft_putull_base_fd(n, "0123456789ABCDEF", 16, 1));
 }

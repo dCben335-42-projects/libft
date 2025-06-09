@@ -58,4 +58,6 @@ gen:
 	@./config/generate_mk.sh $(SRC_DIR) "*.c" $(CONF_MK_SOURCES) SRC_FILES
 	$(MAKE)
 
+-include ./config/forbidden.mk
+
 .PHONY: all clean fclean re norm

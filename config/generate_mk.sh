@@ -17,4 +17,5 @@ FOLDER="${FOLDER%/}"
 find "$FOLDER" -type f -name "$PATTERN" | sort | while read -r file; do
     REL_PATH="${file#"$FOLDER"/}"
     echo "$VAR_NAME += $REL_PATH" >> "$OUTPUT"
+
 done

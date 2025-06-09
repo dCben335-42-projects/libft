@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 22:45:51 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:42:28 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/19 05:44:36 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/06/10 00:43:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
-#include "stdlib.h"
+#include "libft_printf.h"
 
-/**
- * @brief Returns the last element of the list.
- *
- * @param lst The beginning of the list.
- * @return The last element of the list.
- */
-t_list	*ft_lstlast(t_list *lst)
+int	ft_print_percent(va_list ap)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	(void)ap;
+	return (ft_putchar_fd('%', 1));
 }

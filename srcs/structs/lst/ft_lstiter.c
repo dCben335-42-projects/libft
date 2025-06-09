@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:03:23 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/14 00:29:15 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/06/10 00:13:40 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_types.h"
+#include "libft_lst.h"
 
 /**
- * @brief Calculates the length of a string.
+ * @brief Iterates the list 'lst' and applies the function 'f' to the content
+ *        of each element.
  *
- * @param s The string to measure.
- * @return The length of the string, excluding the null terminator.
+ * @param lst The address of a pointer to the first link of a list.
+ * @param f The address of the function used to iterate on the list.
  */
-size_t	ft_strlen(const char *s)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (!f)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

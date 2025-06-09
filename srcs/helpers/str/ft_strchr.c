@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:19:58 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/15 16:21:30 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:12:45 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "types.h"
+#include "libft_types.h"
 
 /**
  * @brief Locates the first occurrence of a character in a string.

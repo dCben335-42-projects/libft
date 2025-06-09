@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 00:21:21 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:50:47 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/19 05:41:53 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/06/10 00:43:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
-#include "lst.h"
+#include "libft_printf.h"
 
-/**
- * @brief Deletes the given element 
- * 		and frees its content using the function 'del'.
- *
- * @param lst The element to be deleted.
- * @param del The address of the function used to delete the content.
- */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	ft_print_pointer(va_list ap)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	void	*ptr;
+	int		ret;
+
+	ptr = va_arg(ap, void *);
+	if (!ptr)
+		return (ft_putstr_fd("(nil)", 1));
+	if (ft_putstr_fd("0x", 1) == -1)
+		return (-1);
+	ret = ft_putull_base_fd((size_t) ptr, "0123456789abcdef", 16, 1);
+	if (ret == -1)
+		return (-1);
+	return (ret + 2);
 }

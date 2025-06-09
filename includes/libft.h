@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/05 19:56:05 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:38:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "stdlib.h"
 # include "unistd.h"
-# include "types.h"
-# include "lst.h"
+# include "libft_types.h"
+# include "libft_lst.h"
 
 // is
 t_bool			ft_isalpha(int c);
@@ -29,6 +29,7 @@ t_bool			ft_isprint(int c);
 t_bool			ft_isspace(int c);
 t_bool			ft_isinbase(char *base, char c);
 t_bool			ft_isnumber(char *str, t_bool is_long);
+t_bool			ft_isinclude(const char *charset, char c);
 
 // put
 int				ft_putchar_fd(const char c, const int fd);
@@ -78,6 +79,9 @@ char			*ft_strtrim(char const *s1, char const *set);
 
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+void			ft_strnegate(char **str, const char *charset);
+void			ft_strpositivate(char **str, const char *charset);
 
 // strs
 char			**ft_strsaddprefix(const char *prefix, char **content);

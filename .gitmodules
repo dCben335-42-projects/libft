@@ -1,3 +1,0 @@
-[submodule "srcs/ft_printf"]
-	path = srcs/ft_printf
-	url = git@github.com:dCben335-42-projects/ft_printf.git

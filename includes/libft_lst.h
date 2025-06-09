@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst.h                                              :+:      :+:    :+:   */
+/*   libft_lst.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 17:58:09 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/01/28 18:00:44 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:15:19 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LST_H
-# define LST_H
+#ifndef LIBFT_LST_H
+# define LIBFT_LST_H
 
-// lst
 typedef struct s_list
 {
 	void			*content;

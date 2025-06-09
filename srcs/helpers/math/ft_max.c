@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:57:07 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:41:50 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:14:31 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "math_utils.h"
+#include "libft_math.h"
 
 /**
  * @brief Returns the maximum of two long integers.

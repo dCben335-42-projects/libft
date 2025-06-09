@@ -6,11 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 22:38:55 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:42:40 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:13:40 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "libft_lst.h"
 #include "stdlib.h"
 
 /**

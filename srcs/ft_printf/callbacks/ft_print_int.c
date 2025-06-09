@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   types.h                                            :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 17:59:48 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/04 02:27:14 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/19 05:42:49 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/06/10 00:43:54 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPES_H
-# define TYPES_H
+#include "libft_printf.h"
 
-# include <stddef.h>
-
-typedef unsigned int	t_uint;
-
-typedef enum e_bool
+int	ft_print_int(va_list ap)
 {
-	TRUE = 1,
-	FALSE = 0,
-}	t_bool;
+	int	n;
 
-#endif
+	n = va_arg(ap, int);
+	return (ft_putnbr_base_fd(n, "0123456789", 1));
+}

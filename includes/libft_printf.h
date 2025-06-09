@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   libft_printf.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 01:34:18 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/17 20:24:14 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:28:16 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFT_PRINTF_H
+# define LIBFT_PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdlib.h>
 
 typedef struct s_flag_map
 {
