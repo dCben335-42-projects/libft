@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 00:29:17 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:38:30 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 01:09:04 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	ft_strnegate(char **str, const char *charset)
 	{
 		if (ft_isinclude(charset, *ptr))
 			*ptr = -*ptr;
-		str++;
+		ptr++;
 	}
 }
