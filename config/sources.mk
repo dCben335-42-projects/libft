@@ -70,7 +70,6 @@ SRC_FILES += helpers/to/ft_toupper.c
 SRC_FILES += helpers/utils/ft_fnmatch.c
 SRC_FILES += helpers/utils/ft_free.c
 SRC_FILES += helpers/utils/ft_intlen_base.c
-SRC_FILES += helpers/utils/ft_isinclude.c
 SRC_FILES += structs/dynarray/destroy.c
 SRC_FILES += structs/dynarray/get.c
 SRC_FILES += structs/dynarray/init.c

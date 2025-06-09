@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:45:17 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/04/01 19:51:24 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/10 00:46:38 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ long	ft_atol_base(const char *str, char *base)
 	int	sign;
 
 	sign = 1;
-	return (sign * ft_atoi_base_helper(str, base, &sign));
+	return (ft_atoi_base_helper(str, base, &sign) * sign);
 }
 
 /**
@@ -63,5 +63,5 @@ int	ft_atoi_base(const char *str, char *base)
 	int	sign;
 
 	sign = 1;
-	return ((int)(sign * ft_atoi_base_helper(str, base, &sign)));
+	return ((int)(ft_atoi_base_helper(str, base, &sign) * sign));
 }
