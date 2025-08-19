@@ -5,5 +5,6 @@ INCLUDES_FILES += libft_lst.h
 INCLUDES_FILES += libft_math.h
 INCLUDES_FILES += libft_printf.h
 INCLUDES_FILES += libft_ptr.h
+INCLUDES_FILES += libft_rgb.h
 INCLUDES_FILES += libft_tree.h
 INCLUDES_FILES += libft_types.h
