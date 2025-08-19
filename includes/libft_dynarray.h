@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:36:04 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/16 18:05:03 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:39:52 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void			*get_dynarray_value(t_dynarray *arr, t_uint index);
 void			*get_dynarray_last_value(t_dynarray *arr);
 
 void			*destroy_dynarray(t_dynarray *arr);
-void			*free_value(void *data);
+void			*free_from_ptr(void *data);
 
 #endif

@@ -6,12 +6,11 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:48:55 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:22:45 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:39:50 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_dynarray.h"
-#include "libft.h"
 
 /**
  * 
@@ -22,7 +21,7 @@
  * @return NULL
  * 
 */
-void	*free_value(void *data)
+void	*free_from_ptr(void *data)
 {
 	free(data);
 	return (NULL);
@@ -41,7 +40,7 @@ void	*free_value(void *data)
 */
 void	*destroy_dynarray(t_dynarray *arr)
 {
-	size_t	i;
+	t_uint	i;
 
 	i = 0;
 	if (arr->destroyer)
@@ -54,10 +53,12 @@ void	*destroy_dynarray(t_dynarray *arr)
 		}
 	}
 	free(arr->data);
+	arr->data = NULL;
+	arr->size = 0;
+	arr->count = 0;
+	arr->last_index = 0;
+	arr->destroyer = NULL;
 	if (arr->is_malloc)
-	{
 		free(arr);
-		arr = NULL;
-	}
 	return (NULL);
 }
