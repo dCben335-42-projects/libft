@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:36:04 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:22:04 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/16 18:05:03 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,12 @@ typedef struct s_dynarray
 t_dynarray		init_dynarray(t_uint size, void *(*destroyer)(void *));
 t_dynarray		*init_dynarray_malloc(t_uint size, void *(*destroyer)(void *));
 
-void			*set_dynarray_value(t_dynarray *arr, t_uint index, void *value);
-void			*push(t_dynarray *arr, void *value);
+void			*set_dynarray_value(
+					t_dynarray *arr,
+					t_uint index,
+					void *value,
+					t_bool destroy_on_fail);
+void			*push(t_dynarray *arr, void *value, t_bool destroy_on_fail);
 
 void			*get_dynarray_value(t_dynarray *arr, t_uint index);
 void			*get_dynarray_last_value(t_dynarray *arr);

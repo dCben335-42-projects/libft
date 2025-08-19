@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:46:29 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:26:26 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/06/16 18:05:14 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,20 @@
  * @return A pointer to the new data array, or NULL if memory allocation fails.
  * 
 */
-static void	**realloc_dynarray(t_dynarray *arr, size_t new_size)
+static void	**realloc_dynarray(
+	t_dynarray *arr,
+	size_t new_size,
+	t_bool destroy_on_fail
+)
 {
 	void	**new;
 	size_t	copy_size;
 
 	new = ft_calloc((new_size + 1), sizeof(void *));
-	if (!new)
-	{
-		arr->count = 0;
-		arr->size = 0;
+	if (!new && destroy_on_fail)
 		return (destroy_dynarray(arr));
-	}
+	else if (!new)
+		return (NULL);
 	if (arr->data)
 	{
 		if (new_size < arr->size)
@@ -60,18 +62,25 @@ static void	**realloc_dynarray(t_dynarray *arr, size_t new_size)
  * or NULL if memory allocation fails.
  * 
  */
-void	*set_dynarray_value(t_dynarray *arr, t_uint index, void *value)
+void	*set_dynarray_value(
+	t_dynarray *arr,
+	t_uint index,
+	void *value,
+	t_bool destroy_on_fail
+)
 {
 	t_uint	new_size;
+	void	**data;
 
 	if (index >= arr->size)
 	{
 		new_size = arr->size * 2;
 		while (new_size <= index)
 			new_size = arr->size * 2;
-		arr->data = realloc_dynarray(arr, new_size);
-		if (!arr->data)
+		data = realloc_dynarray(arr, new_size, destroy_on_fail);
+		if (!data)
 			return (NULL);
+		arr->data = data;
 		arr->size = new_size;
 	}
 	arr->count++;
@@ -94,9 +103,9 @@ void	*set_dynarray_value(t_dynarray *arr, t_uint index, void *value)
  * @return A pointer to the pushed value, or NULL if memory allocation fails.
  * 
 */
-void	*push(t_dynarray *arr, void *value)
+void	*push(t_dynarray *arr, void *value, t_bool destroy_on_fail)
 {
-	if (!set_dynarray_value(arr, arr->last_index, value))
+	if (!set_dynarray_value(arr, arr->last_index, value, destroy_on_fail))
 		return (NULL);
 	return (arr->data[arr->last_index - 1]);
 }
