@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 00:21:21 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:13:40 by bcabocel         ###   ########.fr       */
+/*   Created: 2024/11/14 00:28:01 by bcabocel          #+#    #+#             */
+/*   Updated: 2025/08/19 18:24:47 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
 #include "libft_lst.h"
+#include <stdlib.h>
 
 /**
- * @brief Deletes the given element 
- * 		and frees its content using the function 'del'.
+ * 
+ * @brief Deletes and frees the given element and every successor of that
+ * element, using the function 'del' and free(3). Finally, the pointer to 
+ * the list will be set to NULL.
  *
- * @param lst The element to be deleted.
+ * @param lst The address of a pointer to the element to be deleted.
  * @param del The address of the function used to delete the content.
+ * 
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	*destroy_lst(t_lst **lst, void (*del)(void *))
 {
+	t_lst	*tmp;
+
 	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+		return (NULL);
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = tmp;
+	}
+	return (NULL);
 }

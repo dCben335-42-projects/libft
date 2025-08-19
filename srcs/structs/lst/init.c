@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   init_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 22:43:22 by bcabocel          #+#    #+#             */
+/*   Created: 2024/11/13 22:38:55 by bcabocel          #+#    #+#             */
 /*   Updated: 2025/06/10 00:13:40 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_lst.h"
+#include "stdlib.h"
 
 /**
- * @brief Counts the number of elements in a list.
+ * @brief Allocates (with malloc(3)) and returns a new element.
+ *         The variable 'content' is initialized with the value of the parameter
+ *         'content'. The variable 'next' is initialized to NULL.
  *
- * @param lst The beginning of the list.
- * @return The number of elements in the list.
+ * @param content The content to initialize the new element with.
+ * @return A pointer to the new element or NULL if the allocation fails.
  */
-int	ft_lstsize(t_list *lst)
+t_lst	*init_lst(void *content)
 {
-	int	i;
+	t_lst	*new;
 
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
+	new = malloc(sizeof(t_lst));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

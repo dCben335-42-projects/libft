@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:27:08 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:38:54 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:22:00 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "stdlib.h"
 # include "unistd.h"
 # include "libft_types.h"
-# include "libft_lst.h"
 
 // is
 t_bool			ft_isalpha(int c);

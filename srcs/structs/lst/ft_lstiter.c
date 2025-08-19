@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:29:15 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:13:40 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:24:47 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param lst The address of a pointer to the first link of a list.
  * @param f The address of the function used to iterate on the list.
  */
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_lst *lst, void (*f)(void *))
 {
 	if (!f)
 		return ;

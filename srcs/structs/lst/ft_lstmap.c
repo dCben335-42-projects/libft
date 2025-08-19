@@ -6,7 +6,7 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:29:56 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/06/10 00:13:40 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/08/19 18:24:47 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
  * @param del The address of the function used to delete the content.
  * @return The new list or NULL if the allocation fails.
  */
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*tmp;
+	t_lst	*new;
+	t_lst	*tmp;
 	void	*content;
 
 	if (!f || !del)
@@ -35,14 +35,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		content = (*f)(lst->content);
-		tmp = ft_lstnew(content);
+		tmp = init_lst(content);
 		if (!tmp)
 		{
 			del(content);
-			ft_lstclear(&new, del);
+			destroy_lst(&new, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new, tmp);
+		lst_add_back(&new, tmp);
 		lst = lst->next;
 	}
 	return (new);
