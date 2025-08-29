@@ -6,18 +6,22 @@
 /*   By: bcabocel <bcabocel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 19:51:36 by bcabocel          #+#    #+#             */
-/*   Updated: 2025/08/19 18:16:38 by bcabocel         ###   ########.fr       */
+/*   Updated: 2025/08/29 20:26:35 by bcabocel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_RGB_H
 # define LIBFT_RGB_H
 
+# include <stdint.h>
+
 typedef struct s_rgb
 {
 	unsigned char	r;
 	unsigned char	g;
 	unsigned char	b;
+	uint32_t		c32;
+	uint64_t		c64;
 }	t_rgb;
 
 t_rgb			rgb(unsigned char r, unsigned char g, unsigned char b);
